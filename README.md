@@ -1,5 +1,5 @@
 
-## ASP.NET Core wep app - login proof of concept - using dual auth OpenId and Jwt tokens through AWS Cognito.
+## ASP.NET Core wep app - login proof of concept using dual auth OpenId and Jwt tokens through AWS Cognito.
 
 
 Sign users up / Log users in with AWS Cognito hosted UI.
@@ -19,7 +19,9 @@ The "Protected" endpoint can be reached both through standard cookie authenticat
 There is also one method /Api/Account/GetToken that takes username + password and returns tokens (to have some tokens to play with)
 
 
+
 The key for allowing dual auth is in /Startup.cs where there is a dynamic policy scheme to choose the correct authentication scheme at runtime by lookig at the headers for a "bearer" key and forwards accordingly
+
 Solution found at https://github.com/aspnet/Security/issues/1469 (thanks https://github.com/openidauthority)
 
 
